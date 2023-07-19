@@ -1,0 +1,27 @@
+.sidebar_tweet{
+    background-color: var(--thread-color) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 30px !important;
+    height: 50px !important;
+    width: 200px !important;
+    margin-top: 20px !important; 
+}
+
+.sidbar_threadicon{
+    color: var(--thread-color);
+    font-size: 30px !important;
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+
+}
+.sidebar{
+    border-right: 1px solid var(--thread-background);
+    flex: 0.3;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+}

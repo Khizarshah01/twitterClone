@@ -1,9 +1,14 @@
 import './App.css';
-
+import Sidebar from './Sidebar';
+import Feed from './Feed';
 function App() {
   return (
+    //BEM
     <div className="App">
-      <h1>hi bro</h1>
+      <Sidebar />                   
+      
+      <Feed />
+      {/* widegets */}
     </div>
   );
 }
