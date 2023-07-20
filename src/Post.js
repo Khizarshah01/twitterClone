@@ -15,23 +15,23 @@ function Post({
     <div className='post'>
         <div className='post__avatar'>
 
-          <Avatar src='https://media.comicbook.com/2020/12/naruto-1249229.jpeg?auto=webp'></Avatar>
+          <Avatar src={avatar}></Avatar>
         </div>
         <div className='post__body'>
           <div className='post__header'>
             <div className='post__headerText'>
               <h3>
-                khizar shah{" "}
+                {displayName}{" "}
                 <span>
-                <VerifiedUser className="post__badge"></VerifiedUser>
+               {verified && <VerifiedUser className="post__badge"></VerifiedUser>} @{username}
              </span>
               </h3>
             </div>
             <div className='post__description'>
-              <p>lore fewere  wr w wer e rw r</p>
+              <p>{text}</p>
             </div>
           </div>
-          <img src='https://wallpapers-clan.com/wp-content/uploads/2023/01/naruto-gif-pfp-1.gif' alt='hory'/>
+          <img src={image} alt='hory'/>
          <div className='post__footer'>
           <ChatBubbleOutline fontSize='small'/>
           <Repeat fontSize='small' />
