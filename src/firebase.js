@@ -1,4 +1,7 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/auth"; // Import the Firebase Authentication module
+import "firebase/firestore"; // You may already have this import for Firestore
+
 const firebaseConfig = {
     apiKey: "AIzaSyBi8Kj0sazuT0gENEqRlCuD4XA-AFFyHOo",
     authDomain: "thread-clone-8b0f9.firebaseapp.com",
@@ -9,9 +12,8 @@ const firebaseConfig = {
     measurementId: "G-WH2GPLJ8CL"
 };
 
-
 const firebaseApp = firebase.initializeApp(firebaseConfig);
-
 const db = firebaseApp.firestore();
 
+export const auth = firebase.auth(); // Export the 'auth' object for Firebase Authentication
 export default db;

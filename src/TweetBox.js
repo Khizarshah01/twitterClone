@@ -12,7 +12,7 @@ function TweetBox() {
     e.preventDefault();
 
     db.collection("posts").add({
-      displayName: "Rafeh Qazi",
+      displayName: "Khizar shah",
       username: "cleverqazi",
       verified: true,
       text: tweetMessage,
