@@ -1,19 +1,25 @@
 import React, { useState } from "react";
 import { TextField, Button, Typography, Container } from "@mui/material";
 import { auth } from "./firebase";
+import { Navigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loginError, setLoginError] = useState(null);
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
     try {
       await auth.signInWithEmailAndPassword(email, password);
-      // User is logged in, you can now redirect to the main app or handle the authenticated state.
+      // User is logged in, you can now redirect to the main app.
+      setLoginError(null); // Clear any previous login errors
+      // Use Navigate to programmatically navigate to the main app page
+      return <Navigate to="/" />;
     } catch (error) {
-      console.log(error.message);
-      // Handle authentication errors (e.g., incorrect credentials, account not found, etc.)
+      console.log(error.code, error.message);
+      setLoginError("Invalid email or password");
     }
   };
 
@@ -57,6 +63,7 @@ function Login() {
           >
             Sign In
           </Button>
+          {loginError && <Typography color="error">{loginError}</Typography>}
         </form>
       </div>
     </Container>
