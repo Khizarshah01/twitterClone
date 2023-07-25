@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { TextField, Button, Typography, Container } from "@mui/material";
 import { auth } from "./firebase";
 
@@ -58,6 +59,10 @@ function Login() {
             Sign In
           </Button>
         </form>
+        {/* Add a link to the sign-up page */}
+        <Typography variant="body2" style={{ marginTop: "16px" }}>
+          Don't have an account? <Link to="/signup">Sign Up</Link>
+        </Typography>
       </div>
     </Container>
   );

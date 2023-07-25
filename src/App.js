@@ -3,14 +3,15 @@ import Home from "./Home";
 import Login from "./Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {  AuthContext } from "./AuthProvider";
-import "./index.css";
+import "./App.css";
+import SignUp from "./SignUp";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
 
   return (
    
-      <div>
+      
         <BrowserRouter>
           <Routes>
             {currentUser ? (
@@ -21,9 +22,10 @@ function App() {
               <Route path="/" element={<Login />} />
             )}
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </BrowserRouter>
-      </div>
+  
   
   );
 }

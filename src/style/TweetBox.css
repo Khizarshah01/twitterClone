@@ -22,8 +22,11 @@
   }
   
   .tweetBox__imageInput {
+    background-color: var(--black-color);
+    color: white;
     border: none;
     padding: 10px;
+    margin-left: 5px;
   }
   
   .tweetBox__tweetButton {
@@ -37,4 +40,9 @@
     height: 40px !important;
     margin-top: 20px !important;
     margin-left: auto !important;
+  }
+
+  .input{
+    background-color: var(--black-color);
+    color: white;
   }

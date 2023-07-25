@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import "./Post.css"
+import "./style/Post.css"
 import { Avatar } from '@mui/material'
 import { ChatBubbleOutline, FavoriteBorder, Publish, Repeat, VerifiedUser } from '@mui/icons-material'
 

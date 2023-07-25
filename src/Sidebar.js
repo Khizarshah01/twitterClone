@@ -1,6 +1,5 @@
 import React from 'react';
-import "./Sidebar.css";
-import TwitterIcon from '@mui/icons-material/Twitter';
+import "./style/Sidebar.css";
 import SidebarOption from './SidebarOption';
 import HomeIcon from '@mui/icons-material/Home';
 import ExploreIcon from '@mui/icons-material/Explore';
@@ -27,7 +26,11 @@ function Sidebar() {
 
   return (
     <div className='sidebar'>
-      <TwitterIcon className='sidbar_threadicon' />
+         <img
+        src="https://pbs.twimg.com/profile_images/1683325380441128960/yRsRRjGO_400x400.jpg"
+        alt="Twitter Icon"
+        className='sidbar_twittericon'
+      />
       <SidebarOption Icon={HomeIcon} text={"Home"}/>
       <SidebarOption Icon={ExploreIcon} text={"Explore"}/>
       <SidebarOption Icon={NotificationsIcon} text={"Notification"}/>

@@ -11,18 +11,22 @@
     margin-left: auto;
 }
 
-.sidbar_threadicon{
-    color: var(--thread-color);
-    font-size: 30px !important;
-    margin-left: 20px;
-    margin-bottom: 20px;
 
 
-}
 .sidebar{
     border-right: 1px solid var(--thread-background);
     flex: 0.3;
     margin-top: 20px;
     padding-left: 20px;
     padding-top: 20px;
+    
 }
+
+.sidbar_twittericon {
+    margin-left: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    /* Add any other custom styles you want */
+  }

@@ -2,16 +2,16 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    color: var(--thread-background);
 }
 
 .sidebarOption > .MuiSvgIcon-root{
-    padding: 20px;
+    padding: 18px;
 }
 
 .sidebarOption:hover{
-    background-color: #e8f5fe;
+    background-color: #1c1c1c;
     border-radius: 30px;
-    color: var(--thread-color);
     transition: color 100ms ease-out;
 }
 .sidebarOption > h2{
@@ -21,5 +21,5 @@
 }
 
 .sidebarOption--active{
-    color: var(--thread-color );
+    color: rgb(0, 0, 0);
 }

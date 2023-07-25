@@ -1,6 +1,6 @@
 body{
-  --thread-color: #50b7f5;
-  --thread-background: #e6ecf0;
+  color: white;
+  background-color: var(--black-color);
 }
 
 .app {

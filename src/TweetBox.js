@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import "./TweetBox.css";
+import "./style/TweetBox.css";
 
 import db from "./firebase";
-import { Avatar , Button} from "@mui/material";
+import { Avatar, Button } from "@mui/material";
+import { auth } from "./firebase";
 
 function TweetBox() {
   const [tweetMessage, setTweetMessage] = useState("");
@@ -11,33 +12,37 @@ function TweetBox() {
   const sendTweet = (e) => {
     e.preventDefault();
 
-    db.collection("posts").add({
-      displayName: "Khizar shah",
-      username: "cleverqazi",
-      verified: true,
-      text: tweetMessage,
-      image: tweetImage,
-      avatar:
-        "https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png",
-    });
+    // Get the currently logged-in user
+    const user = auth.currentUser;
 
-    setTweetMessage("");
-    setTweetImage("");
+    if (user) {
+      db.collection("posts").add({
+        displayName: user.displayName,
+        username: user.email.split("@")[0],
+        verified: false,
+        text: tweetMessage,
+        image: tweetImage,
+        avatar: user.photoURL, // Use the user's photoURL as the avatar
+      });
+
+      setTweetMessage("");
+      setTweetImage("");
+    }
   };
 
   return (
     <div className="tweetBox">
       <form>
         <div className="tweetBox__input">
-          <Avatar src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png" />
-          <input
+          <Avatar src={auth.currentUser.photoURL} /> {/* Show the user's photoURL as the avatar */}
+          <input className="input"
             onChange={(e) => setTweetMessage(e.target.value)}
             value={tweetMessage}
             placeholder="What's happening?"
             type="text"
           />
         </div>
-        <input
+        <input 
           value={tweetImage}
           onChange={(e) => setTweetImage(e.target.value)}
           className="tweetBox__imageInput"
@@ -45,11 +50,7 @@ function TweetBox() {
           type="text"
         />
 
-        <Button
-          onClick={sendTweet}
-          type="submit"
-          className="tweetBox__tweetButton"
-        >
+        <Button onClick={sendTweet} type="submit" className="tweetBox__tweetButton">
           Tweet
         </Button>
       </form>

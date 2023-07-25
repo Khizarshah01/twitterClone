@@ -1,11 +1,13 @@
 .widgets {
     flex: 0.3;
+    
   }
   
   .widgets__input {
     display: flex;
     align-items: center;
-    background-color: var(--thread-background);
+    background-color: #1c1c1c;
+    color: white;
     padding: 10px;
     border-radius: 20px;
     margin-top: 10px;
@@ -14,18 +16,20 @@
   
   .widgets__input > input {
     border: none;
-    background-color: var(--thread-background);
+    background-color: #1c1c1c;
+    color: white;
+    margin-left: 10px;
   }
   
   .widgets__searchIcon {
-    color: gray;
+    color: rgb(255, 255, 255);
   }
   
   .widgets__widgetContainer {
     margin-top: 15px;
     margin-left: 20px;
     padding: 20px;
-    background-color: #f5f8fa;
+    background-color: #1c1c1c;
     border-radius: 20px;
   }
   
