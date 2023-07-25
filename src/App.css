@@ -1,13 +1,6 @@
 body{
-  --thread-color: #50b7f5;
-  --thread-background: #e9e9e9;
-}
-
-.App{
-  display: flex;
-  height: 100vh;
-  max-width: 1300px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 10px;
-}
+    --thread-color: #50b7f5;
+    --thread-background: #e6ecf0;
+  }
+  
+  

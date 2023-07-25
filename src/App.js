@@ -1,34 +1,30 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Sidebar from "./Sidebar";
-import Feed from "./Feed";
-import Widgets from "./Widgets";
+import React, { useContext } from "react";
+import Home from "./Home";
 import Login from "./Login";
-import { auth } from "./firebase";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {  AuthContext } from "./AuthProvider";
+import "./index.css";
 
 function App() {
- 
-  return (
-    <Router>
-      <Routes>
-        {/* Route to the login page */}
-        <Route path="/login" element={<Login />} />
+  const { currentUser } = useContext(AuthContext);
 
-        {/* Protected route for the main app */}
-        <Route  path="/" element = { <AuthenticatedApp />}/>
-    
-      </Routes>
-    </Router>
-  );
-}
-
-function AuthenticatedApp() {
   return (
-    <div className="App">
-      <Sidebar />
-      <Feed />
-      <Widgets />
-    </div>
+   
+      <div>
+        <BrowserRouter>
+          <Routes>
+            {currentUser ? (
+              // If user is logged in, show the Home component
+              <Route path="/" element={<Home />} />
+            ) : (
+              // If user is not logged in, show the Login component
+              <Route path="/" element={<Login />} />
+            )}
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+  
   );
 }
 
