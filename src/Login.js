@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 import { TextField, Button, Typography, Container } from "@mui/material";
 import { auth } from "./firebase";
+import "./style/Login.css"; // Import the Login.css file
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -20,10 +21,11 @@ function Login() {
 
   return (
     <Container component="main" maxWidth="xs">
-      <div style={{ marginTop: "8px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div className="login-container">
         <Typography variant="h5">Sign In</Typography>
-        <form style={{ width: "100%", marginTop: "8px" }} onSubmit={handleLogin}>
+        <form className="login-form" onSubmit={handleLogin}>
           <TextField
+         
             variant="outlined"
             margin="normal"
             required
@@ -36,7 +38,7 @@ function Login() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <TextField
+           <TextField
             variant="outlined"
             margin="normal"
             required
@@ -54,12 +56,11 @@ function Login() {
             fullWidth
             variant="contained"
             color="primary"
-            style={{ marginTop: "16px" }}
+            className="login-submit-button"
           >
             Sign In
           </Button>
         </form>
-        {/* Add a link to the sign-up page */}
         <Typography variant="body2" style={{ marginTop: "16px" }}>
           Don't have an account? <Link to="/signup">Sign Up</Link>
         </Typography>

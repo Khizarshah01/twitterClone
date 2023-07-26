@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { TextField, Button, Typography, Container } from "@mui/material";
 import { auth } from "./firebase";
 import { Link, useNavigate } from "react-router-dom";
+import "./style/SignUp.css"; // Import the SignUp.css file
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -32,10 +33,11 @@ function SignUp() {
 
   return (
     <Container component="main" maxWidth="xs">
-      <div style={{ marginTop: "8px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div className="sign-up-container">
         <Typography variant="h5">Sign Up</Typography>
-        <form style={{ width: "100%", marginTop: "8px" }} onSubmit={handleSignUp}>
+        <form className="sign-up-form" onSubmit={handleSignUp}>
           <TextField
+            className="sign-up-input" // Add a custom CSS class to the Display Name input
             variant="outlined"
             margin="normal"
             required
@@ -47,8 +49,12 @@ function SignUp() {
             autoFocus
             value={displayName}
             onChange={(e) => setDisplayName(e.target.value)}
+            InputLabelProps={{ // Add this prop to customize the label
+              className: "sign-up-label",
+            }}
           />
           <TextField
+            className="sign-up-input" // Add a custom CSS class to the Email Address input
             variant="outlined"
             margin="normal"
             required
@@ -59,8 +65,12 @@ function SignUp() {
             autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            InputLabelProps={{ // Add this prop to customize the label
+              className: "sign-up-label",
+            }}
           />
           <TextField
+            className="sign-up-input" // Add a custom CSS class to the Password input
             variant="outlined"
             margin="normal"
             required
@@ -72,22 +82,25 @@ function SignUp() {
             autoComplete="new-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            InputLabelProps={{ // Add this prop to customize the label
+              className: "sign-up-label",
+            }}
           />
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
-            style={{ marginTop: "16px" }}
+            className="sign-up-submit-button" // Add a custom CSS class to the submit button
           >
             Sign Up
           </Button>
-          {signUpError && <Typography color="error">{signUpError}</Typography>}
+          {signUpError && <Typography className="sign-up-error">{signUpError}</Typography>}
         </form>
+        <Typography className="sign-up-link" variant="body2">
+          Have an account? <Link to="/login">Login</Link>
+        </Typography>
       </div>
-      <Typography variant="body2" style={{ marginTop: "16px" }}>
-        Have an account? <Link to="/login">Login</Link>
-      </Typography>
     </Container>
   );
 }
