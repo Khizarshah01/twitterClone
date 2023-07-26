@@ -1,6 +1,6 @@
 # Twitter Clone
+![Twitter Clone Screenshot](https://github.com/Khizarshah01/twitterClone/assets/109973520/69271674-93d1-429d-a147-db2a9313d214)
 
-![Twitter Clone Screenshot](screenshot.png)
 
 This is a simple Twitter clone web application built using React, Firebase, and Material-UI. It allows users to sign up, log in, post tweets, and view a timeline of tweets from other users.
 
@@ -16,7 +16,7 @@ This is a simple Twitter clone web application built using React, Firebase, and 
 
 ## Demo
 
-You can view a live demo of the Twitter clone [here](https://example.com).
+You can view a live demo of the Twitter clone [here](https://thread-clone-8b0f9.web.app/).
 
 ## Features
 
