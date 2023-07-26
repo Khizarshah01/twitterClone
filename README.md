@@ -53,11 +53,19 @@ You can view a live demo of the Twitter clone [here](https://example.com).
 
 ```javascript
 // src/firebase.js
+import firebase from "firebase/compat/app";
+import  "firebase/compat/auth"; 
+import "firebase/compat/firestore";
+
 const firebaseConfig = {
   // Your Firebase configuration
 };
 
-export default firebaseConfig;
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebaseApp.firestore();
+export const auth = firebase.auth(); 
+export default db;
+
 ```
 
 1.  Start the development server:
