@@ -20,24 +20,35 @@ function Login() {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main">
       <div className="login-container">
+        <div className="iconImage">
+
+      <img
+        src="https://pbs.twimg.com/profile_images/1683325380441128960/yRsRRjGO_400x400.jpg"
+        alt="Twitter Icon"
+        className='login_twittericon'
+        />
+        </div>
+
+        <div>
+
         <Typography variant="h5">Sign In</Typography>
         <form className="login-form" onSubmit={handleLogin}>
           <TextField
          
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+         variant="outlined"
+         margin="normal"
+         required
+         fullWidth
+         id="email"
+         label="Email Address"
+         name="email"
+         autoComplete="email"
+         autoFocus
+         value={email}
+         onChange={(e) => setEmail(e.target.value)}
+         />
            <TextField
             variant="outlined"
             margin="normal"
@@ -50,20 +61,21 @@ function Login() {
             autoComplete="current-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          />
+            />
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className="login-submit-button"
-          >
+            >
             Sign In
           </Button>
         </form>
         <Typography variant="body2" style={{ marginTop: "16px" }}>
           Don't have an account? <Link to="/signup">Sign Up</Link>
         </Typography>
+            </div>
       </div>
     </Container>
   );
