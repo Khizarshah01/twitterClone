@@ -1,6 +1,6 @@
 .tweetBox {
     padding-bottom: 10px;
-    border-bottom: 8px solid var(--thread-background);
+    border-bottom: 4px solid var(--border-back);
     padding-right: 10px;
   }
   
@@ -14,11 +14,14 @@
     display: flex;
   }
   
+  
   .tweetBox__input > input {
     flex: 1;
     margin-left: 20px;
     font-size: 20px;
     border: none;
+    background-color: var(--black-color);
+    color: white;
   }
   
   .tweetBox__imageInput {
@@ -41,8 +44,18 @@
     margin-top: 20px !important;
     margin-left: auto !important;
   }
-
-  .input{
-    background-color: var(--black-color);
+  
+  input{
+    margin-left: 20px;
+  }
+  h3{
+    display: flex;
+  }
+  .namel{
     color: white;
+  }
+  #sectionTweet{
+    margin-right: 50px;
+  margin-left: 50px;
+  display: flex;
   }

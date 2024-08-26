@@ -3,6 +3,7 @@
     align-items: center;
     cursor: pointer;
     color: var(--thread-background);
+    margin: 10px;
 }
 
 .sidebarOption > .MuiSvgIcon-root{
@@ -13,6 +14,7 @@
     background-color: #1c1c1c;
     border-radius: 30px;
     transition: color 100ms ease-out;
+    margin-right: 40px;
 }
 .sidebarOption > h2{
     font-weight: 800;

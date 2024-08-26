@@ -1,6 +1,7 @@
 .feed{
     flex: 0.4;
-    border-right: 1px solid var(--thread-background);
+    border-right: 1px solid var(--border-back);
+    border-left: 1px solid var(--border-back);
     min-width: fit-content;
     overflow-y: scroll;
 }
@@ -20,6 +21,11 @@
     top: 0;
     background-color: var(--black-color);
     z-index: 100;
-    border: 1px solid var(--thread-background);
+    border: 1px solid var(--border-back);
     padding: 15px 20px;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
 }

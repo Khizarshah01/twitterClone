@@ -1,6 +1,7 @@
 body{
-    --thread-color: #50b7f5;
+    --thread-color: #36a0e1;
     --thread-background: rgb(232, 218, 218);
+    --border-back: rgb(47, 51, 54);
     --black-color: black;
     background-color: var(--black-color);
   }

@@ -12,8 +12,9 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { Button } from '@mui/material';
 import { auth } from './firebase';
 import { Logout } from '@mui/icons-material';
+// import { Link } from 'react-router-dom';
 
-function Sidebar() {
+function Sidebar({ setActiveComponent }) {
   const handleSignOut = async () => {
     try {
       await auth.signOut();
@@ -31,16 +32,16 @@ function Sidebar() {
         alt="Twitter Icon"
         className='sidbar_twittericon'
       />
-      <SidebarOption Icon={HomeIcon} text={"Home"}/>
-      <SidebarOption Icon={ExploreIcon} text={"Explore"}/>
-      <SidebarOption Icon={NotificationsIcon} text={"Notification"}/>
-      <SidebarOption Icon={BookmarkIcon} text={"Bookmark"}/>
-      <SidebarOption Icon={EmailIcon} text={"Messages"}/>
-      <SidebarOption Icon={ListIcon} text={"Lists"}/>
-      <SidebarOption Icon={PersonIcon} text={"Profile"}/>
-      <SidebarOption Icon={Logout} text={"Logout"} className="sidebar_signout" onClick={handleSignOut}/>
-      <SidebarOption Icon={MoreHorizIcon} text={"More"}/>
-      <Button variant="outlined" className="sidebar_tweet">Tweet</Button>
+       <SidebarOption Icon={HomeIcon} text={"Home"} onClick={() => setActiveComponent('feed')} />
+      <SidebarOption Icon={ExploreIcon} text={"Explore"} />
+      <SidebarOption Icon={NotificationsIcon} text={"Notifications"} />
+      <SidebarOption Icon={BookmarkIcon} text={"Bookmark"} />
+      <SidebarOption Icon={EmailIcon} text={"Messages"} />
+      <SidebarOption Icon={ListIcon} text={"Lists"} />
+      <SidebarOption Icon={PersonIcon} text={"Profile"} onClick={() => setActiveComponent('profile')} />
+      <SidebarOption Icon={Logout} text={"Logout"} className="sidebar_signout" onClick={handleSignOut} />
+      <SidebarOption Icon={MoreHorizIcon} text={"More"} />
+      <Button variant="outlined" className="sidebar_tweet">Post</Button>
     </div>
   );
 }

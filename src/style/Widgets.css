@@ -29,8 +29,9 @@
     margin-top: 15px;
     margin-left: 20px;
     padding: 20px;
-    background-color: #1c1c1c;
+    /* background-color: #1c1c1c; */
     border-radius: 20px;
+    border: solid rgb(47, 51, 54) 1px;  
   }
   
   .widgets__widgetContainer > h2 {
